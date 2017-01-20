@@ -1,6 +1,7 @@
-import React from "react"
-import { connect } from "react-redux"
+import React from "react";
+import { connect } from "react-redux";
 
+import Loading from "./materalUI/Loading";
 import { fetchTags } from "../actions/tagsActions"
 import Tags from "./Tags"
 class TagsBody extends React.Component {
@@ -13,10 +14,10 @@ class TagsBody extends React.Component {
     return(
       <div>
       {fetching && tagslist.length === 0 &&
-        <h2> Loading...</h2>
+      <Loading />
       }
       {!fetching && tagslist.length === 0 &&
-        <h2> Empty</h2>
+        <h2>Empty</h2>
       }
       {tagslist.length > 0 &&
           <div style={{ opacity: fetching ? 0.5 : 1 }}>

@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { fetchArtist } from "../actions/artistActions";
 import ArtistContainer from "./ArtistContainer";
+import Loading from "./materalUI/Loading";
 
 class Artist extends React.Component {
 
@@ -26,7 +27,7 @@ class Artist extends React.Component {
     return(
       <div>
       {fetching  &&
-        <h2> Loading...</h2>
+        <Loading />
       }
       {!fetching && fetched &&
         <ArtistContainer data={info}/>

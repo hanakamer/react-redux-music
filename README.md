@@ -1,6 +1,6 @@
 ## react redux music db
 
-![Alt text](img.png "Optional Title")
+![Alt text](img.png)
 
 ##[demo](http://react-redux-music.surge.sh/)
 

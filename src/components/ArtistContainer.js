@@ -56,7 +56,7 @@ class ArtistContainer extends React.Component {
 
             <CardMedia
               overlay={<CardTitle title={name}
-              subtitle={<div  dangerouslySetInnerHTML={{ __html: bio.content }}></div>} />}
+              subtitle={<div  dangerouslySetInnerHTML={{ __html: bio.summary }}></div>} />}
             >
               <img src={image[5]['#text']} role="presentation" />
             </CardMedia>

@@ -8,6 +8,7 @@ import { Router, Route, browserHistory, Redirect } from 'react-router';
  import App from './App';
 import './index.css';
 import reducer from "./reducers";
+import { saveState } from './localStorage';
 
 import TagsBody from './components/TagsBody';
 import TagArtists from './components/TagArtists';
@@ -19,12 +20,13 @@ injectTapEventPlugin();
 
 
 const logger = createLogger();
-
 const middleware = applyMiddleware(thunk, logger);
+const store = createStore(reducer, middleware);
 
+store.subscribe(()=>{
+  saveState(store.getState());
+});
 
-
-const store = createStore(reducer, middleware)
 const Routes=(
   <MuiThemeProvider>
     <Provider store={store}>
